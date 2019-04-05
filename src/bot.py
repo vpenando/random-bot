@@ -16,9 +16,11 @@ async def on_message(message: Message) -> None:
     # we only accept commands starting with '!'
     if message.content[0] != '!':
         return
-    msg = message.content.split(' ')[0][1:]
-    if f"{msg}" in commands:
-        await commands[msg](client, message)
+    cmd_with_args = message.content.split(' ')
+    cmd = cmd_with_args[0][1:]
+    args = [arg for arg in cmd_with_args[1:] if arg != '']
+    if f"{cmd}" in commands:
+        await commands[cmd](client, message, args)
     else:
         await error(message)
 
