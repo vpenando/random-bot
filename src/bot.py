@@ -5,7 +5,7 @@ from commands import commands
 client = Client()
 
 def error(message: Message) -> Message:
-    err_msg = f"Error: invalid command '{message.content}'"
+    err_msg = "Error: invalid command '%s'" % message.content
     return client.send_message(message.channel, err_msg)
 
 @client.event
@@ -19,7 +19,7 @@ async def on_message(message: Message) -> None:
     cmd_with_args = message.content.split(' ')
     cmd = cmd_with_args[0][1:]
     args = [arg for arg in cmd_with_args[1:] if arg != '']
-    if f"{cmd}" in commands:
+    if cmd in commands:
         await commands[cmd](client, message, args)
     else:
         await error(message)
