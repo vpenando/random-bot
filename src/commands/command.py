@@ -1,10 +1,6 @@
 from discord import Client, Message
 from functools import wraps
 
-def _error(client: Client, message: Message, command: str) -> Message:
-    msg = f"Error: invalid command {command}"
-    return client.send_message(message.channel, msg)
-
 def command(cmd):
     def logging_decorator(func):
         @wraps(func)
