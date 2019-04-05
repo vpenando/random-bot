@@ -18,4 +18,4 @@ add_cmd(ping)
 
 # logs each available command
 for cmd in commands:
-    print("Command '' added" % cmd)
+    print("Command '%s' added" % cmd)
