@@ -5,7 +5,7 @@ from commands import commands
 client = Client()
 
 def error(message: Message) -> Message:
-    err_msg = f"Error: invalid command '{message.content}''"
+    err_msg = f"Error: invalid command '{message.content}'"
     return client.send_message(message.channel, err_msg)
 
 @client.event
