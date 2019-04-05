@@ -6,7 +6,7 @@ commands = {}
 
 @command("help")
 def help(client: Client, message: Message, args: list) -> Message:
-    available_commands = "\n".join(map(lambda s: ' - *!%s*' % s, commands))
+    available_commands = "\n".join(map(lambda s: " - *!%s*" % s, commands))
     msg = "Available commands:\n%s" % available_commands
     return client.send_message(message.channel, msg)
 
