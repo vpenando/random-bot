@@ -8,8 +8,8 @@ def _error(client: Client, message: Message, command: str) -> Message:
 def command(cmd):
     def logging_decorator(func):
         @wraps(func)
-        def wrapped_function(client: Client, message: Message):    
-            return func(client, message)
+        def wrapped_function(client: Client, message: Message, args:list):
+            return func(client, message, args)
         wrapped_function.cmd = cmd
         return wrapped_function
     return logging_decorator
