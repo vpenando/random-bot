@@ -20,7 +20,7 @@ def my_cmd(client: Client, message: Message, args: list) -> Message:
     msg = # your code here...
     return client.send_message(message.channel, msg)
 ```
-Then, add your new command in `src/__init__.py` this way:
+Then, add your new command in `src/commands/__init__.py` this way:
 ```py
 add_cmd(my_cmd)
 ```
