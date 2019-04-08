@@ -13,14 +13,14 @@ Just run the following command:
 #### How to add a command?
 First of all, *the* question is: how to *create* a command?
 
-It's very simple:
+It's very simple! Create a new file in `src/commands`, for example `my_cmd.py`:
 ```py
 @command("my_cmd")
 def my_cmd(client: Client, message: Message, args: list) -> Message:
     msg = # your code here...
     return client.send_message(message.channel, msg)
 ```
-Then, add your new command this way:
+Then, add your new command in `src/__init__.py` this way:
 ```py
 add_cmd(my_cmd)
 ```
