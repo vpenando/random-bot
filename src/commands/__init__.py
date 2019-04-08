@@ -1,3 +1,4 @@
+# coding: utf-8
 from .command import command
 from .ping import ping
 from discord import Client, Message
