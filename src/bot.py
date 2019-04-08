@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# coding: utf-8
 import sys
 from discord import Client, Message
 from commands import commands
