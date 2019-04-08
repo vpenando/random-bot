@@ -14,10 +14,7 @@ def help(client: Client, message: Message, args: list) -> Message:
 def add_cmd(func):
     name = func.cmd
     commands.update({name: func})
+    print("Command '%s' added" % name)
 
 add_cmd(help)
 add_cmd(ping)
-
-# logs each available command
-for cmd in commands:
-    print("Command '%s' added" % cmd)
