@@ -26,5 +26,6 @@ async def on_message(message: Message) -> None:
     else:
         await error(message)
 
-token = sys.argv[1]
-client.run(token)
+if __name__ == '__main__':
+    token = sys.argv[1]
+    client.run(token)
