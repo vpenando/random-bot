@@ -25,3 +25,8 @@ Then, add your new command this way:
 add_cmd(my_cmd)
 ```
 `my_cmd` can now be called from Discord: `!my_cmd`. 
+
+---
+
+#### Todo list
+- [ ] [Autodetect-cmd](https://github.com/vpenando/random-bot/wiki/Autodetect-cmd)
