@@ -27,4 +27,4 @@ Et voilà!
 
 
 #### Todo list
-- [ ] [Autodetect-cmd](https://github.com/vpenando/random-bot/wiki/Autodetect-cmd)
+- [x] [Autodetect-cmd](https://github.com/vpenando/random-bot/wiki/Autodetect-cmd)
