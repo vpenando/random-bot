@@ -1,6 +1,6 @@
 # coding: utf-8
 from discord import Client, Message
-from .command import command
+from .core import command
 
 @command("ping")
 def ping(client: Client, message: Message, args: list) -> Message:
