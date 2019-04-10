@@ -23,7 +23,7 @@ def my_cmd(client: Client, message: Message, args: list) -> Message:
     msg = # your code here...
     return client.send_message(message.channel, msg)
 ```
-Et voilà!
+Et voilà! Your command is automatically added!
 
 
 #### Todo list
