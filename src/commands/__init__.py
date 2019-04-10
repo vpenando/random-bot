@@ -1,20 +1,3 @@
 # coding: utf-8
-from .command import command
+from .help import help
 from .ping import ping
-from discord import Client, Message
-
-commands = {}
-
-@command("help")
-def help(client: Client, message: Message, args: list) -> Message:
-    available_commands = "\n".join(map(lambda s: " - *!%s*" % s, commands))
-    msg = "Available commands:\n%s" % available_commands
-    return client.send_message(message.channel, msg)
-
-def add_cmd(func):
-    name = func.cmd
-    commands.update({name: func})
-    print("Command '%s' added" % name)
-
-add_cmd(help)
-add_cmd(ping)
