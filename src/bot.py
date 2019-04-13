@@ -31,7 +31,7 @@ def history(client: Client, message: Message, args: list) -> Message:
         line = f.readline()
         lines.append(line)
     last_lines = lines[-history_size:]
-    msg = "\n".join(last_lines)
+    msg = "<br />".join(last_lines)
     return client.send_message(message.channel, msg)
 
 @client.event
