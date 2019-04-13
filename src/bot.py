@@ -24,7 +24,7 @@ async def on_message(message: Message) -> None:
     if message.content[0] != "!":
         return
     cmd_with_args = message.content.split(" ")
-    await log_call(message.author.display_name, message.content)
+    log_call(message.author.display_name, message.content)
     cmd = cmd_with_args[0][1:]
     args = [arg for arg in cmd_with_args[1:] if arg != ""]
     if cmd in commands:
