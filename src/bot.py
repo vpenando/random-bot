@@ -15,7 +15,7 @@ def error(message: Message) -> Message:
 def log_call(user: str, cmd: str) -> None:                                       
     datestr = str(datetime.datetime.now()).split(".")[0]                         
     with open(LOG_FILE, "a") as f:                                               
-        f.write("[%s] %s: %s" % (datestr, user, cmd)) 
+        f.write("[%s] %s: %s\n" % (datestr, user, cmd)) 
 
 @client.event
 async def on_message(message: Message) -> None:
