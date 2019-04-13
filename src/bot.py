@@ -22,9 +22,9 @@ async def on_message(message: Message) -> None:
     cmd = cmd_with_args[0][1:]
     args = [arg for arg in cmd_with_args[1:] if arg != ""]
     if cmd in commands:
-        await commands[cmd](client, message, args)
+        commands[cmd](client, message, args)
     else:
-        await error(message)
+        error(message)
 
 if __name__ == '__main__':
     token = sys.argv[1]
