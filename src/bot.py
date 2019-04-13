@@ -5,15 +5,17 @@ import sys
 from discord import Client, Message
 from commands import commands
 
+LOG_FILE = "bot.log"
 client = Client()
 
 def error(message: Message) -> Message:
     err_msg = "Error: invalid command '%s'" % message.content
     return client.send_message(message.channel, err_msg)
 
-def log_call(user: str, cmd: str) -> None:
-    datestr = str(datetime.datetime.now()).split(".")[0]
-    print("[%s] %s: %s" % (datestr, user, cmd))
+def log_call(user: str, cmd: str) -> None:                                       
+    datestr = str(datetime.datetime.now()).split(".")[0]                         
+    with open(LOG_FILE, "w") as f:                                               
+        f.write("[%s] %s: %s" % (datestr, user, cmd)) 
 
 @client.event
 async def on_message(message: Message) -> None:
