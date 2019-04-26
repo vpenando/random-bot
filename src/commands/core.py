@@ -1,4 +1,5 @@
 # coding: utf-8
+import datetime
 from functools import wraps
 
 commands = {}
@@ -9,7 +10,8 @@ def command(arg=None):
         func.__cmd__ = func.__name__
         name = func.__cmd__ 
         commands.update({name: func})
-        print("Command '%s' added" % name)
+        now = datetime.datetime.now()
+        print("[{}] Command '{}' added".format(now, name))
         return func
     else:
         def cmd_function_builder(func):
