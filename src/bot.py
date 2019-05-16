@@ -3,7 +3,7 @@
 import datetime
 import sys
 from discord import Client, Message
-from commands import commands
+from commands import commands, log
 
 client = Client()
 
@@ -28,5 +28,8 @@ async def on_message(message: Message) -> None:
         await error(message)
 
 if __name__ == '__main__':
-    token = sys.argv[1]
-    client.run(token)
+    try:
+        token = sys.argv[1]
+        client.run(token)
+    except Exception as e:
+        log.write_to_log_file(e)
