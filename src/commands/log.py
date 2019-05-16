@@ -1,14 +1,17 @@
 # coding: utf-8
 import os
+import datetime
 from discord import Client, Message
 from .core import command
 
 LOG_FILE_PATH = os.getenv('HOME') + '/discord-bot.log'
 
-def write_to_log_file(msg: str) -> None:
+def write_to_log_file(message: str) -> None:
     try:
+        now = datetime.datetime.now()
+        message = '[{0}] {1}'.format(now, message))
         with open(LOG_FILE_PATH, 'a+') as f:
-            f.write('%s\n' % msg)
+            f.write('{0}\n'.format(message))
     except:
         pass
 
