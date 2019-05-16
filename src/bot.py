@@ -29,6 +29,7 @@ async def on_message(message: Message) -> None:
 
 if __name__ == '__main__':
     try:
+        log.write_to_log_file('Bot started')
         token = sys.argv[1]
         client.run(token)
     except Exception as e:
