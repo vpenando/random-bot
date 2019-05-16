@@ -9,9 +9,9 @@ LOG_FILE_PATH = os.getenv('HOME') + '/discord-bot.log'
 def write_to_log_file(message: str) -> None:
     try:
         now = datetime.datetime.now()
-        message = '[{0}] {1}'.format(now, message))
+        message = '[{0}] {1}\n'.format(now, message)
         with open(LOG_FILE_PATH, 'a+') as f:
-            f.write('{0}\n'.format(message))
+            f.write(message)
     except:
         pass
 
