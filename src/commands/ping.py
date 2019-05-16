@@ -5,6 +5,6 @@ from .log import write_to_log_file
 
 @command
 def ping(client: Client, message: Message, args: list) -> Message:
-    write_to_log_file('Command PING called by {1.author.name}'.format(message))
+    write_to_log_file('Command PING called by {0.author.name}'.format(message))
     msg = "pong {0.author.mention}".format(message)
     return client.send_message(message.channel, msg)
