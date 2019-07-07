@@ -7,8 +7,7 @@ commands = {}
 def command(arg=None):
     if callable(arg):
         func = arg  # more explicit
-        func.__cmd__ = func.__name__
-        name = func.__cmd__ 
+        name = func.__name__
         commands.update({name: func})
         now = datetime.datetime.now()
         print("[{}] Command '{}' added".format(now, name))
@@ -21,8 +20,7 @@ def command(arg=None):
             def wrapped_function(client, message, args):
                 return func(client, message, args)
             cmd = cmd if cmd is not None else func.__name__
-            wrapped_function.__cmd__ = cmd
-            name = wrapped_function.__cmd__ 
+            name = cmd
             commands.update({name: func})
             print("Command '%s' added" % name)
             return wrapped_function
